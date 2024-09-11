@@ -38,7 +38,7 @@ def solve(n):
             i += 1
         print(k)
         k = []
-        i  0
+        i = 0
 
 
 solve(n)
