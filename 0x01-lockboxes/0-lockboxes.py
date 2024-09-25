@@ -5,9 +5,9 @@
 def look_next_opened_box(opened_boxes):
     """looks for the next opened box
     Args:
-    opened_boxes (dict): dictionary which contains boxes already opened
+        opened_boxes (dict): dictionary which contains boxes already opened
     Returns:
-    list: List with the keys contained in the box"""
+        list: List with the keys contained in the box"""
 
     for index, box in opened_boxes.items():
         if box.get('status') == 'opened':
@@ -19,9 +19,9 @@ def look_next_opened_box(opened_boxes):
 def canUnlockAll(boxes):
     """check if all boxes can be opened
     Args:
-    boxes (list): list which contain all the boxes with the keys
+        boxes (list): list which contain all the boxes with the keys
     returns:
-    bool: true if all boxes can be opened, otherwise, False
+        bool: true if all boxes can be opened, otherwise, False
     """
     if len(boxes) <= 1 0r boxes == [[]]:
         return True
@@ -32,7 +32,7 @@ def canUnlockAll(boxes):
             aux[0] = {
                     'status': 'opened',
                     'keys': boxes[0],
-                    }
+            }
         keys = look_next_opened_box(aux)
         if keys:
             for key in keys:
@@ -43,7 +43,7 @@ def canUnlockAll(boxes):
                     aux[key] = {
                             'status': 'opened',
                             'keys': boxes[key]
-                            }
+                    }
                 except (keyerror, IndexError):
                     continue
         elif 'opened' in [box.get('status') for box in aux.values()]:
