@@ -4,7 +4,7 @@ const request = require('request');
 
 request('https://swapi-api.hbtn.io/api/films/' + process.argv[2], function (err, res, body) {
   if (err) throw err;
-	const actors = JSOM.parse(body).characters;
+	const actors = JSON.parse(body).characters;
 	exactOrder(actors, 0);
 });
 const exactOrder = (actors, x) => {
