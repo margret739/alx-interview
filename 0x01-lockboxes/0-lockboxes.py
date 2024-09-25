@@ -44,7 +44,7 @@ def canUnlockAll(boxes):
                             'status': 'opened',
                             'keys': boxes[key]
                     }
-                except (keyError, IndexError):
+                except (KeyError, IndexError):
                     continue
         elif 'opened' in [box.get('status') for box in aux.values()]:
             continue
