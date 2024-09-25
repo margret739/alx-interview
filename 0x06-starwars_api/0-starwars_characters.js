@@ -9,10 +9,10 @@ function (err, res, body) {
 	exactOrder(actors, 0);
 });
 const exactOrder = (actors, x) => {
-	if (x === actors.length) return;
-	request(actors[x], function (err, res, body) {
-	  if (err) throw err;
-	  console.log(JSON.parse(body).name);
-	  exactOrder(actors, x + 1);
-	});
+  if (x === actors.length) return;
+  request(actors[x], function (err, res, body) {
+    if (err) throw err;
+    console.log(JSON.parse(body).name);
+    exactOrder(actors, x + 1);
+  });
 };
