@@ -23,7 +23,7 @@ def canUnlockAll(boxes):
     returns:
         bool: true if all boxes can be opened, otherwise, False
     """
-    if len(boxes) <= 1 0r boxes == [[]]:
+    if len(boxes) <= 1 or boxes == [[]]:
         return True
 
     aux = {}
@@ -44,7 +44,7 @@ def canUnlockAll(boxes):
                             'status': 'opened',
                             'keys': boxes[key]
                     }
-                except (keyerror, IndexError):
+                except (keyError, IndexError):
                     continue
         elif 'opened' in [box.get('status') for box in aux.values()]:
             continue
